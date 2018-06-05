@@ -36,6 +36,7 @@ namespace QAForum.Controllers
         {
             Forum forum = forumRepository.GetForumByID(id);
 
+            ViewBag.Threads = forumRepository.GetThreadsByForum(id);
             ViewBag.Message = "Forum Detail";
 
             return View(forum);
