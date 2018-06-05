@@ -220,6 +220,7 @@
     <Content Include="Views\Post\Edit.cshtml" />
     <Content Include="Views\Post\Delete.cshtml" />
     <Content Include="Views\Thread\PartialThreadList.cshtml" />
+    <Content Include="Views\Post\PartialPostList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

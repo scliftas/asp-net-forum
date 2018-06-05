@@ -36,6 +36,10 @@
 
     </dl>
 </div>
+
+<h3>Posts</h3>
+@Html.Action("GetPostsForThread", new { posts = (List<QAForum.Models.Post>)(@ViewBag.Posts) });'
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ThreadID }) |
     @Html.ActionLink("Back to List", "Index")

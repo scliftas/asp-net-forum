@@ -36,6 +36,7 @@ namespace QAForum.Controllers
         {
             var result = forumRepository.GetThreadByID(id);
 
+            ViewBag.Posts = forumRepository.GetPostsByThread(id);
             ViewBag.Message = "Thread detail";
 
             return View(result);
@@ -112,6 +113,20 @@ namespace QAForum.Controllers
             catch
             {
                 return View(thread);
+            }
+        }
+
+        public ActionResult GetPostsForThread(List<Post> posts)
+        {
+            if (posts != null && posts.Count > 0)
+            {
+                return PartialView("~/Views/Post/PartialPostList.cshtml", posts);
+            }
+            else
+            {
+                ContentResult cvr = new ContentResult();
+                cvr.Content = "There are no posts for this thread";
+                return cvr;
             }
         }
     }
