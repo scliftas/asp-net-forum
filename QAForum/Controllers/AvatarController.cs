@@ -26,6 +26,8 @@ namespace QAForum.Controllers
         {
             var avatarUtilities = new AvatarUtilities();
 
+            ViewBag.RememberAvatar = stateRepository.GetForumUserState().RememberAvatar;
+
             return View(avatarUtilities.GetAllAvatars());
         }
 
@@ -35,7 +37,27 @@ namespace QAForum.Controllers
 
             forumUserState.AvatarFileName = avatarName;
 
+            forumUserState.PersistAvatar(forumUserState.RememberAvatar);
+
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult RememberAvatar(bool chkRemember)
+        {
+            ForumUserState forumUserState = stateRepository.GetForumUserState();
+
+            if (chkRemember == true)
+            {
+                forumUserState.RememberAvatar = true;
+                forumUserState.PersistAvatar(true);
+            }
+            else
+            {
+                forumUserState.RememberAvatar = false;
+                forumUserState.PersistAvatar(false);
+            }
+
+            return RedirectToAction("SelectAvatar", "Avatar");
         }
     }
 }

@@ -6,6 +6,13 @@
 
 <h2>Avatar Selection</h2>
 
+@using (Html.BeginForm("RememberAvatar", "Avatar"))
+{
+    @Html.Label("Remember");
+    @Html.CheckBox("chkRemember", (bool)(ViewBag.RememberAvatar), new { onClick = "this.form.submit();" });
+    <p />
+}
+
 @using (Html.BeginForm("PersistChosenAvatar", "Avatar"))
 {
     foreach (var image in Model)
