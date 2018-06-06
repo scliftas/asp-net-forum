@@ -162,6 +162,7 @@
     <Compile Include="Models\ForumEntities.cs" />
     <Compile Include="Models\IForumRepository.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Post.MetaData.cs" />
     <Compile Include="Models\SQLForumRepository.cs" />
     <Compile Include="Models\Thread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
