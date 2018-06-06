@@ -1,0 +1,27 @@
+﻿@model IEnumerable<QAForum.Models.AvatarData>
+
+@{
+    ViewBag.Title = "User State - Select Avatar";
+}
+
+<h2>Avatar Selection</h2>
+
+@using (Html.BeginForm("PersistChosenAvatar", "Avatar"))
+{
+    foreach (var image in Model)
+    {
+        <div class="col-sm-2 col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-thumbnail">
+                    <img src="@Url.Content(image.FullPath)" alt="Avatar image: @image.AvatarName" />
+                </div>
+                <div class="panel-body">
+                    <input type="submit" name="avatarName" value="@image.AvatarName" />
+                </div>"
+            </div>
+        </div>
+    }
+}
+
+
+<div class="row"></div>
