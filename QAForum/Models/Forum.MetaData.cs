@@ -8,6 +8,8 @@ namespace QAForum.Models
     {
         internal sealed class MetaData
         {
+            [Required]
+            [StringLength(100)]
             [DisplayName("Title")]
             public string ForumTitle { get; set; }
         }
