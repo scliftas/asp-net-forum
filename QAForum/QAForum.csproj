@@ -165,6 +165,7 @@
     <Compile Include="Models\Post.MetaData.cs" />
     <Compile Include="Models\SQLForumRepository.cs" />
     <Compile Include="Models\Thread.cs" />
+    <Compile Include="Models\Thread.MetaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
